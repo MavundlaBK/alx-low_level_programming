@@ -1,17 +1,23 @@
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
-* Main - Entry point
-*
-*Return : Always 0 (success)
-*/
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
-	char alphabet;
+	char alph;
 
-	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
-		putchar(alphabet);
-		putchar('\n');
+	for (alph = 'a'; alph <= 'z'; alph++)
+		putchar(alph);
+	for (alph = 'A'; alph <= 'Z'; alph++)
+		putchar(alph);
+	putchar('\n');
+
 	return (0);
 }
