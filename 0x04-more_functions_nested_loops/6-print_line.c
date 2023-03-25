@@ -1,19 +1,27 @@
 #include "main.h"
+
 /**
- * _isdigit - checks for a digit
- * @c: input
+ * print_line - entry point
  *
- * Return: 1 if c is a digit
- * 0 otherwise
+ * Description: Prints lines
+ *@n: number of lines
+ * Return: void
  */
-int _isdigit(int c)
+
+void print_line(int n)
 {
-	if ((c >= '0') && (c <= '9'))
+	int num_lines;
+
+	if (n <= 0)
 	{
-		return (1);
+		_putchar('\n');
 	}
 	else
 	{
-		return (0);
+		for (num_lines = 1; num_lines <= n; num_lines++)
+		{
+			_putchar('_');
+		}
+		_putchar('\n');
 	}
 }
