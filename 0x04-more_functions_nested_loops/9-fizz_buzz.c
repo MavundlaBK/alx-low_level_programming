@@ -1,19 +1,30 @@
-#include "main.h"
+#include <stdio.h>
 /**
- * _isdigit - checks for a digit
- * @c: input
+ * main - entry point
  *
- * Return: 1 if c is a digit
- * 0 otherwise
+ * Description: prints FizzBuzz
+ *
+ * Return: void
  */
-int _isdigit(int c)
+int main(void)
 {
-	if ((c >= '0') && (c <= '9'))
+	int n;
+
+	for (n = 1; n <= 100; n++)
 	{
-		return (1);
+		if ((n % 3 == 0) && (n % 5 == 0))
+			printf("FizzBuzz");
+		else if (n % 5 == 0)
+			printf("Buzz");
+		else if (n % 3 == 0)
+			printf("Fizz");
+		else
+			printf("%i", n);
+
+		if (n < 100)
+			printf(" ");
+		else
+			printf("\n");
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
