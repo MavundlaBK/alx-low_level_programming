@@ -1,19 +1,34 @@
 #include "main.h"
+
 /**
- * _isdigit - checks for a digit
- * @c: input
+ * print_diagonal - entry point
  *
- * Return: 1 if c is a digit
- * 0 otherwise
+ * Description: Prints diagonals
+ *@n: number of spaces
+ * Return: void
  */
-int _isdigit(int c)
+
+void print_diagonal(int n)
 {
-	if ((c >= '0') && (c <= '9'))
+	int row, num_lines;
+
+	if (n <= 0)
 	{
-		return (1);
+		_putchar('\n');
 	}
 	else
 	{
-		return (0);
+		for (row = 1; row <= n; row++)
+		{
+			if (row > 1)
+			{
+				for (num_lines = 1; num_lines <= row - 1; num_lines++)
+				{
+				_putchar(' ');
+				}
+			}
+			_putchar('\\');
+			_putchar('\n');
+		}
 	}
 }
