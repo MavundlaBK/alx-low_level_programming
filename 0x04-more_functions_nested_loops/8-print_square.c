@@ -1,19 +1,30 @@
 #include "main.h"
+
 /**
- * _isdigit - checks for a digit
- * @c: input
+ * print_square - entry point
  *
- * Return: 1 if c is a digit
- * 0 otherwise
+ * Description: Prints square
+ *@size: size of square
+ * Return: void
  */
-int _isdigit(int c)
+
+void print_square(int size)
 {
-	if ((c >= '0') && (c <= '9'))
+	int row, column;
+
+	if (size <= 0)
 	{
-		return (1);
+		_putchar('\n');
 	}
 	else
 	{
-		return (0);
+		for (row = 1; row <= size; row++)
+		{
+			for (column = 1; column <= size; column++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
 	}
 }
