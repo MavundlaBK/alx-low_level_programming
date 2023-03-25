@@ -1,46 +1,90 @@
+#include <stdio.h>
 #include "main.h"
+
 /**
- * print_number - print an int numbers.
- * @n: number tested
+ * main - prints the biggest prime factor of a number.
+ *
  * Return: Always 0.
  */
-void print_number(int n)
+int main(void)
 {
-	int i, j, digit, digits, power;
-	unsigned int temp, numchar, number;
+	long int number;
 
-	digit = 0;
-	if (n < 0)
+	number = 612852475143;
+
+	if (isPrime(number) == 1)
 	{
-		_putchar('-');
-		temp = -n;
+		printf("%ld\n", number);
 	}
 	else
 	{
-		temp = n;
+		printf("%ld\n", biggestFactor(number));
 	}
 
-	number = temp;
+	return (0);
+}
 
-	while (number >= 10)
-	{
-		number = number / 10;
-		digit++;
-	}
-	digits = digit + 1;
-	power = 1;
-	i = 1;
+/**
+ * isPrime - analyze if a number is prime or not
+ * @n: number to check
+ *
+ * Return: true if it is prime false if not
+ */
+int isPrime(long int n)
+{
+	int i;
 
-	while (i < digits)
+	if (n <= 1)
 	{
-		power = power * 10;
-		i++;
+		return (0);
 	}
-	j = power;
-	while (j >= 1)
+	else if (n == 2)
 	{
-		numchar = (temp / j) % 10;
-		_putchar(numchar + '0');
-		j = j / 10;
+		return (1);
+	}
+	else
+	{
+		for (i = 2; i < n; i++)
+		{
+			if (n % i == 0)
+			{
+				return (0);
+			}
+		}
+		return (1);
 	}
 }
+
+/**
+ * biggestFactor - returns the biggest prime factor of a number
+ * @a: number to check
+ *
+ * Return: biggest factor
+ */
+long int biggestFactor(long int a)
+{
+	long int i, factor;
+
+	factor = a;
+	for (i = 2; i <= factor; i++)
+	{
+		if (isPrime(factor) == 1)
+		{
+			break;
+		}
+		else
+		{
+			if ((factor % i == 0) && (isPrime(i) == 1))
+			{
+				factor = factor / i;
+				continue;
+			}
+			else
+			{
+				factor = factor;
+			}
+		}
+	}
+	return (factor);
+}
+
