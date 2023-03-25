@@ -1,19 +1,46 @@
 #include "main.h"
 /**
- * _isdigit - checks for a digit
- * @c: input
- *
- * Return: 1 if c is a digit
- * 0 otherwise
+ * print_number - print an int numbers.
+ * @n: number tested
+ * Return: Always 0.
  */
-int _isdigit(int c)
+void print_number(int n)
 {
-	if ((c >= '0') && (c <= '9'))
+	int i, j, digit, digits, power;
+	unsigned int temp, numchar, number;
+
+	digit = 0;
+	if (n < 0)
 	{
-		return (1);
+		_putchar('-');
+		temp = -n;
 	}
 	else
 	{
-		return (0);
+		temp = n;
+	}
+
+	number = temp;
+
+	while (number >= 10)
+	{
+		number = number / 10;
+		digit++;
+	}
+	digits = digit + 1;
+	power = 1;
+	i = 1;
+
+	while (i < digits)
+	{
+		power = power * 10;
+		i++;
+	}
+	j = power;
+	while (j >= 1)
+	{
+		numchar = (temp / j) % 10;
+		_putchar(numchar + '0');
+		j = j / 10;
 	}
 }
