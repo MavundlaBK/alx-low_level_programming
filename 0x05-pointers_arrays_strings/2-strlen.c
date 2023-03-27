@@ -13,7 +13,5 @@ int _strlen(char *s)
 		bongi++;
 		s++;
 	}
-
 	return (bongi);
-	
 }
