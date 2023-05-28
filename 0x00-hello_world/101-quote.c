@@ -3,7 +3,9 @@
 #include <unistd.h>
 
 /** main - prints a string without using printf
+ 
  * Return: always 1
+ 
  */
 
 int main(void)
