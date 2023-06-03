@@ -3,8 +3,9 @@
 #include <unistd.h>
 
 /**
- * Main - Preints a string without using Printf fuction
- * Return: always return 0 (Success)
+ * main - The entry point of the program
+ *
+ * Return: always return 1 (Success)
  */
 
 int main(void)
